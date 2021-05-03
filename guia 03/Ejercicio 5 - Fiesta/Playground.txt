@@ -1,0 +1,68 @@
+| admin bebedor1 bebedor2 bebedor3 bar1 bar2 bar3 cerveza1 cerveza2 cerveza3 colNumerica colRes valor resultado|
+
+"Creo instancias de la clase Cerveza"
+
+cerveza1 := Cerveza crearCervConNombre: 'Heineken'.
+
+cerveza2 := Cerveza crearCervConNombre: 'Stella'.
+
+cerveza3 := Cerveza crearCervConNombre: 'Quilmes'.
+
+"Creo instancias de la clase Bar"
+
+bar1 := Bar crearBarConNombre: 'Bjorn' conUbicacion: 'Cipolletti'.
+
+bar2 := Bar crearBarConNombre: 'Astros' conUbicacion: 'Roca'.
+
+bar3 := Bar crearBarConNombre: 'Pinta' conUbicacion: 'Neuquen'.
+
+"Le agrego a Bar todas sus cervezas"
+
+bar1 agregarCerveza: cerveza1.
+bar1 agregarCerveza: cerveza2.
+bar1 agregarCerveza: cerveza3.
+
+bar2 agregarCerveza: cerveza1.
+bar2 agregarCerveza: cerveza2.
+bar2 agregarCerveza: cerveza3.
+
+
+bar3 agregarCerveza: cerveza2.
+bar3 agregarCerveza: cerveza3.
+"Creo instancias de la clase Bebedor"
+
+bebedor1 := Bebedor crearBebConNombre: 'Lucas' conApe: 'Gutierrez' conLugarProc: 'Neuquen' conDatosPer: '20anios' conCervPref: cerveza1.
+ 
+bebedor2 := Bebedor crearBebConNombre: 'Mateo' conApe: 'Guzman' conLugarProc: 'Cipolletti' conDatosPer: '21anios' conCervPref: cerveza2.
+
+bebedor3 := Bebedor crearBebConNombre: 'Maxi' conApe: 'Cordoba' conLugarProc: 'Roca' conDatosPer: '22anios' conCervPref: cerveza3.
+
+"Le agrego a los bebedores los bares"
+bebedor1 agregarBar: bar1.
+bebedor1 agregarBar: bar2.
+
+bebedor2 agregarBar: bar3.
+
+bebedor3 agregarBar: bar1.
+bebedor3 agregarBar: bar2.
+bebedor3 agregarBar: bar3.
+
+"Creo la instancia de administrador de fiesta"
+
+admin := AdministradorFiesta crearAdminConNombre: 'Gabriel'.
+
+"Agrego los bebedores a la coleccion que el admin posee"
+admin agregarBebedor: bebedor1.
+
+admin agregarBebedor: bebedor2.
+
+admin agregarBebedor: bebedor3.
+
+"Agrego los bares a la coleccion de bares que posee admin"
+admin agregarBar: bar1.
+admin agregarBar: bar2.
+admin agregarBar: bar3.
+
+valor := admin verificarCervezaPreferida: bebedor1 conNombreCerveza: cerveza1.
+
+resultado := admin calcularPorcentajeBares: cerveza1.
