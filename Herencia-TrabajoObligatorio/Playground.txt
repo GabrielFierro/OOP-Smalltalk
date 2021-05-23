@@ -1,0 +1,20 @@
+|vehiculo auto1 auto2 camion1 camion2 gestor listaVehiculos |
+
+vehiculo := Vehiculo crearPatenteV: 'ABC-123' conMarca: 'Renault' conColor: 'Gris' conCantPuertas: 5 conCantRuedas: 4 conKmActual: 28039.
+
+auto1 := Auto crearPatenteV: 'DEF-456' conMarca: 'Fiat'  conColor: 'Rojo' conCantPuertas: 3 conCantRuedas: 5  conKmActual: 87312 conCantKmR: 127831. 
+
+auto2 := Auto crearPatenteV: 'QWE-631' conMarca: 'Volkswagen' conColor: 'Gris' conCantPuertas: '5' conCantRuedas: 4 conKmActual: 45090 conCantKmR: 77831. 
+
+camion1 := Camion crearPatenteV: 'GHI-789' conMarca: 'Fiat'  conColor: 'Negro' conCantPuertas: 2 conCantRuedas: 12 conKmActual: 57312 conTipo: 'Cisterna' conKmService: 60000 conTara: 23987.
+
+camion2 := Camion crearPatenteV: 'VXC-479' conMarca: 'Fiat'  conColor: 'Negro' conCantPuertas: 2 conCantRuedas: 12 conKmActual: 44512 conTipo: 'Frigorifico' conKmService: 45000 conTara: 21300.
+
+gestor := GestorVehiculos crearGestor.
+
+gestor agregarVehiculo: auto1.
+gestor agregarVehiculo: auto2.
+gestor agregarVehiculo: camion1.
+gestor agregarVehiculo: camion2.
+
+listaVehiculos := gestor generarListaDeVehiculos.
