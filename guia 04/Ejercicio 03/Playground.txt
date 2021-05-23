@@ -1,0 +1,47 @@
+| barco1 barco2 barco3 barco4 alquiler1 alquiler2 alquiler3 alquiler4 cliente1 puerto1 fechaFab1 fechaFab2 fechaFab3 fechaFab4 fechaIni fechaFin colTuplas|
+
+"Creacion de los barcos"
+ 
+fechaFab1 := Date year: 2021 day: 01. 
+barco1 := Barco crearMatriculaB: 'ABCD-1234' conEslora: 2400 conAnioFab: fechaFab1.
+
+fechaFab2 := Date year: 2020 day: 02.
+barco2 := BarcoDeportivo crearMatriculaB: 'ABC-123' conEslora: 2200 conAnioFab: fechaFab2 conPotenciaCV: 2000.
+
+fechaFab3 := Date year: 2019 day: 03. 
+barco3 := Velero crearMatriculaB: 'CD-34' conEslora: 2300 conAnioFab: fechaFab3 conNroMastil: 2.
+
+fechaFab4 := Date year: 2020 day: 02.
+barco4 := Yate crearMatriculaB: 'WWW-333' conEslora: 2400 conAnioFab: fechaFab4 conPotenciaCV: 2000 conNroCamarote: 5.
+
+"Creacion de un cliente"
+cliente1 := Cliente crearNombreC: 'Esteban' conApe: 'Gutierrez' conDni: '20419486' conEmail: 'esteban.gutierrez@gmail.com' conNroMovil: '1543829847'.
+
+"Creacion de los alquileres"
+
+fechaIni := Date year: 2020 month: 01 day: 01.
+fechaFin := Date year: 2021 month: 01 day: 01.
+alquiler1 := Alquiler crearDatosCliente: cliente1 conFechaI: fechaIni conFechaF: fechaFin conMontoAlquiler: 95000 conBarco: barco1. 
+alquiler2 := Alquiler crearDatosCliente: cliente1 conFechaI: fechaIni conFechaF: fechaFin conMontoAlquiler: 125000 conBarco: barco2.
+alquiler3 := Alquiler crearDatosCliente: cliente1 conFechaI: fechaIni conFechaF: fechaFin conMontoAlquiler: 10000 conBarco: barco3.
+alquiler4 := Alquiler crearDatosCliente: cliente1 conFechaI: fechaIni conFechaF: fechaFin conMontoAlquiler: 55000 conBarco: barco4.
+
+"Creacion del puerto"
+puerto1 := Puerto crearNroAmarre: 1.
+
+"Agrego los amarres al puerto"
+puerto1 agregarAmarre: 2.
+puerto1 agregarAmarre: 3.
+puerto1 agregarAmarre: 4.
+puerto1 agregarAmarre: 5.
+
+"Agrego los alquileres al puerto"
+
+puerto1 agregarAlquiler: alquiler1.
+puerto1 agregarAlquiler: alquiler2.
+puerto1 agregarAlquiler: alquiler3.
+puerto1 agregarAlquiler: alquiler4.
+
+colTuplas := OrderedCollection new.
+
+colTuplas := puerto1 valorAlquileres.
